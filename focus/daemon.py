@@ -8,8 +8,8 @@ import click
 
 from .config import (
     DAEMON_LABEL, DAEMON_PLIST_PATH, DAEMON_SCRIPT_DIR, DAEMON_SCRIPT_PATH,
-    DAEMON_LOG_PATH, DAEMON_ERR_PATH, HOSTS_PATH, STATE_DIR, CONFIG_FILE,
-    STATE_FILE, SYSTEM_PYTHON, LOG_DIR,
+    DAEMON_LOG_PATH, DAEMON_ERR_PATH, HOSTS_PATH, STATE_DIR, CONFIG_DIR,
+    CONFIG_FILE, STATE_FILE, SYSTEM_PYTHON, LOG_DIR,
 )
 
 
@@ -40,10 +40,16 @@ def install_daemon():
     reinstall = DAEMON_PLIST_PATH.exists()
     if reinstall:
         click.echo("Updating existing installation...")
-    click.echo("[1/5] Creating state directory...")
+    click.echo("[1/5] Creating directories...")
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     os.chmod(STATE_DIR, 0o755)
     os.chown(STATE_DIR, 0, 0)  # root:wheel
+
+    # Create user config dir (owned by the real user, not root)
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    real_uid = int(os.environ.get("SUDO_UID", os.getuid()))
+    real_gid = int(os.environ.get("SUDO_GID", os.getgid()))
+    os.chown(CONFIG_DIR, real_uid, real_gid)
 
     # Create state.json if it doesn't exist (root-only write)
     if not STATE_FILE.exists():
