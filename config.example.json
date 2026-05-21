@@ -1,0 +1,116 @@
+{
+  "lists": {
+    "social": [
+      "9gag.com",
+      "facebook.com",
+      "instagram.com",
+      "linkedin.com",
+      "pinterest.com",
+      "reddit.com",
+      "stumbleupon.com",
+      "tiktok.com",
+      "tumblr.com",
+      "twitter.com",
+      "vine.co"
+    ],
+    "news": [
+      "aol.com",
+      "bbc.co.uk",
+      "bbc.com",
+      "bloomberg.com",
+      "buzzfeed.com",
+      "chicagotribune.com",
+      "cnn.com",
+      "drudgereport.com",
+      "forbes.com",
+      "foxnews.com",
+      "gawker.com",
+      "gothamist.com",
+      "huffingtonpost.com",
+      "jezebel.com",
+      "latimes.com",
+      "msn.com",
+      "msnbc.com",
+      "nationalgeographic.com",
+      "news.google.com",
+      "news.yahoo.com",
+      "nydailynews.com",
+      "nypost.com",
+      "nytimes.com",
+      "rt.com",
+      "salon.com",
+      "telegraph.co.uk",
+      "theguardian.com",
+      "theonion.com",
+      "usnews.com",
+      "usatoday.com",
+      "vice.com",
+      "washingtonpost.com",
+      "wsj.com"
+    ],
+    "entertainment": [
+      "collegehumor.com",
+      "dailymotion.com",
+      "funnyordie.com",
+      "hulu.com",
+      "netflix.com",
+      "twitch.tv",
+      "youtube.com"
+    ],
+    "email": [
+      "app.slack.com",
+      "gmail.com",
+      "mail.google.com",
+      "outlook.com",
+      "outlook.office.com",
+      "web.whatsapp.com",
+      "whatsapp.com",
+      "whatsapp.net"
+    ],
+    "apps": [
+      "whatsapp.com"
+    ]
+  },
+  "apps": {
+    "email": [
+      "WhatsApp",
+      "Slack"
+    ],
+    "social": [
+      "Discord"
+    ],
+    "entertainment": [],
+    "whatsapp": [],
+    "apps": [
+      "Mail",
+      "WhatsApp"
+    ]
+  },
+  "presets": {
+    "casual": {
+      "lists": [
+        "social"
+      ],
+      "duration": "1h"
+    },
+    "lockdown": {
+      "lists": [
+        "social",
+        "news",
+        "entertainment",
+        "email"
+      ],
+      "duration": "4h"
+    },
+    "deepwork": {
+      "lists": [
+        "social",
+        "news",
+        "entertainment",
+        "email",
+        "apps"
+      ],
+      "duration": "2h"
+    }
+  }
+}

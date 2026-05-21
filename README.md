@@ -5,9 +5,13 @@ Unblockable site & app blocker for macOS. Blocks websites via `/etc/hosts` and f
 ## Install
 
 ```bash
-cd /Users/aditya/Documents/tools/app_block
+git clone https://github.com/adityasengar/focus-blocker.git
+cd focus-blocker
 pip install -e .
 focus install  # sets up daemon, requires sudo
+
+# Copy the pre-configured block lists + presets
+cp config.example.json ~/.focus/config.json
 ```
 
 ## Quick Start
